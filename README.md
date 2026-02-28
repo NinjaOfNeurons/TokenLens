@@ -2,7 +2,7 @@
 
 # 🔬 TokenLens
 
-> Wanna see how AI chops your text into tiny weird pieces? This shows it. 🟢🔵🟡
+> Wanna see how AI chops your text into tiny weird pieces? This shows it. 
 
 
 **Watch it do its thing 🎥:** 
