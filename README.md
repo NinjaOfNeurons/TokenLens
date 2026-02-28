@@ -5,7 +5,9 @@
 > Wanna see how AI chops your text into tiny weird pieces? This shows it. 🟢🔵🟡
 
 
-**Demo video:** [Watch it do its thing 🎥](https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae) 
+**Demo video:** [Watch it do its thing 🎥]
+https://github.com/user-attachments/assets/your-video.mp4
+
 
 ---
 
