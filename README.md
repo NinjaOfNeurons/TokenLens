@@ -9,7 +9,7 @@
 
 Here’s the GUI version you’re converting to CLI, so you know what it’s doing:
 
-![TokenLens GUI](https://github.com/user-attachments/assets/a3c4b5ff-1187-4c7b-a4cd-d0e0f817b8df)
+https://github.com/user-attachments/assets/a3c4b5ff-1187-4c7b-a4cd-d0e0f817b8df
 
 ---
 
