@@ -44,7 +44,7 @@ TokenLens lets you:
 
 ---
 
-## Run it (super easy)
+## Run the Web App (super easy)
 
 ```bash id="tz7p2m"
 git clone https://github.com/your-username/TokenLens.git
@@ -59,6 +59,29 @@ streamlit run app.py
 ```
 
 Open `http://localhost:8501` and watch the magic happen ✨
+
+---
+
+## Run the CLI (also super easy)
+
+For terminal lovers, TokenLens has a built-in CLI module.
+
+```bash
+# Tokenize direct text input
+python -m tokenlens.cli "This is a test of the tokenlens engine."
+
+# Pipe data from other tools
+echo "Pipe me!" | python -m tokenlens.cli
+
+# Check options
+python -m tokenlens.cli --help
+```
+
+**CLI Flags:**
+* `-e, --encoder`: Choose your encoder (e.g., `o200k_base`)
+* `-q, --quiet`: Output just the integer token count for scripts
+* `--no-color`: Disable ANSI color background output
+* `-s, --stats`: Force show detailed stats/costs
 
 ---
 
@@ -86,6 +109,10 @@ Open `http://localhost:8501` and watch the magic happen ✨
 
 ```
 TokenLens/
+├── tokenlens/
+│   ├── __init__.py   ← package marker
+│   ├── core.py       ← tokenization heart
+│   └── cli.py        ← the cool terminal tool
 ├── app.py            ← web app
 ├── requirements.txt  ← boring dependencies
 └── README.md         ← this lazy thing
