@@ -6,8 +6,7 @@
 
 
 **Demo video:** [Watch it do its thing 🎥]
-https://github.com/user-attachments/assets/your-video.mp4
-
+https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae
 
 ---
 
