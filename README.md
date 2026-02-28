@@ -1,180 +1,101 @@
+
+
 # 🔬 TokenLens
 
-> Visualize how AI models tokenize your text — instantly, in your browser.
+> Wanna see how AI chops your text into tiny weird pieces? This shows it. 🟢🔵🟡
+
+
+**Demo video:** [Watch it do its thing 🎥](https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae) 
 
 ---
 
-https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae
+## What even is TokenLens?
+
+AI doesn’t read like humans. It breaks stuff into **tokens** — sometimes words, sometimes weird fragments, sometimes punctuation.
+
+TokenLens lets you:
+
+* See why prompts cost $$$
+* Figure out why AI freaks out sometimes
+* Compare how different models slice your text
 
 ---
 
-## What is TokenLens?
+## Features (or whatever)
 
-Language models don't read text the way humans do. They break it into **tokens** — chunks of characters that may be words, parts of words, punctuation, or even spaces.
-
-TokenLens lets you see exactly how that happens, so you can:
-
-- Understand why your prompt costs what it does
-- Debug unexpected model behavior caused by weird tokenization
-- Learn how different models split the same text differently
+* Colors for tokens (because why not)
+* Token IDs, indexes, counts, ratios
+* Shows API cost for GPT-4o, GPT-4, GPT-3.5 💸
+* Flip between 4 encoders
+* Updates as you type ⚡
 
 ---
 
-## Demo
+## Supported Encoders
 
-![TokenLens Screenshot](static/image.png)
-
----
-
-## Features
-
--  Color-coded token visualization — each token gets a distinct color
--  Token list with index and token ID
--  Token count, character count, and chars-per-token ratio
--  Estimated API cost for GPT-4o, GPT-4, and GPT-3.5
--  Switch between 4 encoders in real time
--  Updates instantly as you type
+| Encoding      | Models               | Vocab    |
+| ------------- | -------------------- | -------- |
+| `cl100k_base` | GPT-4, GPT-3.5-turbo | 100k-ish |
+| `o200k_base`  | GPT-4o               | 200k-ish |
+| `p50k_base`   | text-davinci-002/003 | 50k-ish  |
+| `r50k_base`   | GPT-2, GPT-3         | 50k-ish  |
 
 ---
 
-## Supported Encodings
+## Run it (super easy)
 
-| Encoding | Models | Vocab Size |
-|---|---|---|
-| `cl100k_base` | GPT-4, GPT-3.5-turbo | 100,277 |
-| `o200k_base` | GPT-4o | 200,019 |
-| `p50k_base` | text-davinci-002/003 | 50,281 |
-| `r50k_base` | GPT-2, GPT-3 | 50,257 |
-
----
-
-## Installation
-
-### Prerequisites
-
-Make sure you have Python installed. You can check by running:
-
-```bash
-python --version
-```
-
-You need **Python 3.8 or higher**. If you don't have it, download it from [python.org](https://www.python.org/downloads/).
-
----
-
-### Step 1 — Clone the repo
-
-```bash
+```bash id="tz7p2m"
 git clone https://github.com/your-username/TokenLens.git
 cd TokenLens
-```
-
----
-
-### Step 2 — Create a virtual environment (recommended)
-
-```bash
-# Mac / Linux
 python -m venv venv
+# Mac/Linux
 source venv/bin/activate
-
 # Windows
-python -m venv venv
 venv\Scripts\activate
-```
-
-> A virtual environment keeps your project dependencies isolated from the rest of your system. Good practice.
-
----
-
-### Step 3 — Install dependencies
-
-```bash
 pip install -r requirements.txt
-```
-
-Or install manually:
-
-```bash
-pip install streamlit tiktoken
-```
-
----
-
-### Step 4 — Run the app
-
-```bash
 streamlit run app.py
 ```
 
-Then open your browser and go to:
-
-```
-http://localhost:8501
-```
+Open `http://localhost:8501` and watch the magic happen ✨
 
 ---
 
-## Dependencies
+## Token money stuff
 
-| Package | Version | Purpose |
-|---|---|---|
-| `streamlit` | >= 1.28 | Web UI framework |
-| `tiktoken` | >= 0.5 | OpenAI's tokenizer |
+| Model         | Cost / 1M tokens |
+| ------------- | ---------------- |
+| GPT-4o        | $5               |
+| GPT-4         | $30              |
+| GPT-3.5-turbo | $0.50            |
 
-Create a `requirements.txt` with:
-
-```
-streamlit>=1.28
-tiktoken>=0.5
-```
+> Check OpenAI if prices matter.
 
 ---
 
-## API Cost Reference
+## Why tokens even matter
 
-Prices are per **1 million input tokens** as of early 2025:
-
-| Model | Input |
-|---|---|
-| GPT-4o | $5.00 |
-| GPT-4 | $30.00 |
-| GPT-3.5-turbo | $0.50 |
-
-> Always check [OpenAI's pricing page](https://openai.com/pricing) for the latest rates.
+* Tokens = text chunks (~4 chars each)
+* BPE = AI’s way of merging bytes until vocab is big
+* Costs, context windows, weird splits = all token stuff
 
 ---
 
-## Key Concepts
-
-**What is a token?**
-A token is a chunk of text — roughly 4 characters or ¾ of a word on average in English. Numbers, punctuation, and rare words often get split into multiple tokens.
-
-**What is BPE?**
-Byte Pair Encoding — the algorithm tiktoken uses. It starts with individual bytes and repeatedly merges the most common pairs until it builds a vocabulary of ~100k tokens.
-
-**Why does tokenization matter?**
-- API costs are calculated per token, not per word or character
-- Context windows (e.g. 128k tokens) are measured in tokens
-- Unusual tokenization can cause models to misread numbers, code, or names
-
----
-
-## Project Structure
+## Project tree (looks organized, kinda)
 
 ```
 TokenLens/
-├── app.py            ← Streamlit web app
-├── requirements.txt  ← Python dependencies
-└── README.md
+├── app.py            ← web app
+├── requirements.txt  ← boring dependencies
+└── README.md         ← this lazy thing
 ```
 
 ---
 
 ## License
 
-MIT — do whatever you want with it.
+MIT. Do what you want. Seriously.
 
 ---
 
 *Built to learn. Inspired by [tiktokenizer.vercel.app](https://tiktokenizer.vercel.app)*
+
