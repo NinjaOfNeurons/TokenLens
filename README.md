@@ -1,103 +1,107 @@
 
+#  TokenLens CLI
 
-# 🔬 TokenLens
-
-> Wanna see how AI chops your text into tiny weird pieces? This shows it. 
-
-
-**Watch it do its thing 🎥:** 
-
-https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae
+> See how AI models tokenize your text — straight from your terminal. No browser needed. 
 
 ---
 
-## What even is TokenLens?
+## Demo Screenshot (GUI Reference)
 
-AI doesn’t read like humans. It breaks stuff into **tokens** — sometimes words, sometimes weird fragments, sometimes punctuation.
+Here’s the GUI version you’re converting to CLI, so you know what it’s doing:
 
-TokenLens lets you:
-
-* See why prompts cost $$$
-* Figure out why AI freaks out sometimes
-* Compare how different models slice your text
+![TokenLens GUI](https://github.com/user-attachments/assets/a3c4b5ff-1187-4c7b-a4cd-d0e0f817b8df)
 
 ---
 
-## Features (or whatever)
+## What is TokenLens CLI?
 
-* Colors for tokens (because why not)
-* Token IDs, indexes, counts, ratios
-* Shows API cost for GPT-4o, GPT-4, GPT-3.5 💸
-* Flip between 4 encoders
-* Updates as you type ⚡
+TokenLens CLI is a **Command-Line Interface** for TokenLens:
 
----
-
-## Supported Encoders
-
-| Encoding      | Models               | Vocab    |
-| ------------- | -------------------- | -------- |
-| `cl100k_base` | GPT-4, GPT-3.5-turbo | 100k-ish |
-| `o200k_base`  | GPT-4o               | 200k-ish |
-| `p50k_base`   | text-davinci-002/003 | 50k-ish  |
-| `r50k_base`   | GPT-2, GPT-3         | 50k-ish  |
+* Input your text in terminal
+* See how it’s split into **tokens**
+* Pick different encoders (`cl100k_base`, `o200k_base`, etc.)
+* View **token IDs**, counts, and the full token list
+* Works great for scripts, automation, or quick testing
 
 ---
 
-## Run it (super easy)
+## Installation
 
-```bash id="tz7p2m"
-git clone https://github.com/your-username/TokenLens.git
+1. Make sure you have Python 3.8+
+
+```bash id="python_check"
+python --version
+```
+
+2. Clone the repo and enter CLI branch
+
+```bash id="git_clone_cli"
+git clone https://github.com/NinjaOfNeurons/TokenLens.git
 cd TokenLens
-python -m venv venv
+git checkout cli-version
+```
+
+3. (Optional but recommended) Create a virtual environment
+
+```bash id="venv_setup"
 # Mac/Linux
+python -m venv venv
 source venv/bin/activate
+
 # Windows
+python -m venv venv
 venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run app.py
 ```
 
-Open `http://localhost:8501` and watch the magic happen ✨
+4. Install dependencies
+
+```bash id="pip_install_cli"
+pip install tiktoken
+```
 
 ---
 
-## Token money stuff
+## Usage
 
-| Model         | Cost / 1M tokens |
-| ------------- | ---------------- |
-| GPT-4o        | $5               |
-| GPT-4         | $30              |
-| GPT-3.5-turbo | $0.50            |
+```bash id="cli_usage"
+python tokenlens_cli.py "Hello world!" --encoder cl100k_base
+```
 
-> Check OpenAI if prices matter.
+Output example:
+
+```
+Input text: Hello world!
+Encoder: cl100k_base
+Tokens (4): [15496, 2157, 0, 50256]
+```
+
+* `--encoder` is optional; default is `cl100k_base`
+* Works with encoders: `cl100k_base`, `o200k_base`, `p50k_base`, `r50k_base`
 
 ---
 
-## Why tokens even matter
+## Why CLI?
 
-* Tokens = text chunks (~4 chars each)
-* BPE = AI’s way of merging bytes until vocab is big
-* Costs, context windows, weird splits = all token stuff
+* Fast token inspection without opening a browser
+* Ideal for automation, scripts, or testing prompts
+* Fun for contributors to add **bonus features** like colored output, JSON export, or cost estimation
 
 ---
 
-## Project tree (looks organized, kinda)
+## Contributing
 
-```
-TokenLens/
-├── app.py            ← web app
-├── requirements.txt  ← boring dependencies
-└── README.md         ← this lazy thing
-```
+Want to make it cooler? Suggestions:
+
+* Add **color-coded tokens** in terminal
+* Output **JSON / CSV** of tokens
+* Add **API cost estimates**
+* Add **unit tests** or **examples**
+
+> PRs welcome! Start on the `cli-version` branch.
 
 ---
 
 ## License
 
-MIT. Do what you want. Seriously.
-
----
-
-*Built to learn. Inspired by [tiktokenizer.vercel.app](https://tiktokenizer.vercel.app)*
+MIT — do whatever you want.
 
