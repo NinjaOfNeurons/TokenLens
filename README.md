@@ -5,7 +5,7 @@
 > Wanna see how AI chops your text into tiny weird pieces? This shows it. 
 
 
-**Watch it do its thing 🎥:** 
+**Watch it do its thing :** 
 
 https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae
 
@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/946f0e4e-910a-4bbd-acff-07a3ce4007ae
 
 ## What even is TokenLens?
 
-AI doesn’t read like humans. It breaks stuff into **tokens** — sometimes words, sometimes weird fragments, sometimes punctuation.
+AI doesn’t read like humans. It breaks stuff into **tokens**  sometimes words, sometimes weird fragments, sometimes punctuation.
 
 TokenLens lets you:
 
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open `http://localhost:8501` and watch the magic happen ✨
+Open `http://localhost:8501` and watch the magic happen 
 
 ---
 
